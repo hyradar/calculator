@@ -239,11 +239,16 @@ function equals() {
             subtractBool = false
         }
         else if (divideBool == true) {
-            total = int1 / int2;
+            if (int1 != 0 && int2 != 0) {
+                total = int1 / int2;
+            }
+            else {
+                total = 0;
+            }
             document.querySelector('.lastoperation').innerHTML = document.querySelector('.lastoperation').innerHTML + " " + val2  + " =";
-            document.querySelector('.currentoperation').innerHTML = total;
-            operationInProgress = false;
-            divideBool = false
+                document.querySelector('.currentoperation').innerHTML = total;
+                operationInProgress = false;
+                divideBool = false
         }
         else if (multiplyBool == true) {
             total = int1 * int2;
